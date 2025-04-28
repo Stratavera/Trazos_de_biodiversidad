@@ -1,0 +1,8 @@
+---
+format: html
+---
+
+Trazos de Biodiversidad invita a ver el paisaje ecuatoriano no solo como un conjunto de datos dispersos, sino como un entramado dinámico de historias evolutivas, adaptaciones ecológicas e interacciones humanas. A través de una lectura sistemática y reflexiva de la investigación biogeográfica, el libro propone una mirada más profunda y matizada sobre lo que significa conservar y comprender la biodiversidad en uno de los rincones más complejos y fascinantes del planeta.
+
+
+Una característica distintiva de este proyecto es la utilización de técnicas de análisis sistematizado para organizar los contenidos. A partir de métodos de clasificación automatizada y lectura estructurada de fuentes, se logró sintetizar un cuerpo de conocimiento amplio y disperso, respetando la integridad de los datos originales y ofreciendo una narrativa accesible para investigadores, estudiantes y profesionales de la conservación. Aunque el proceso de sistematización utilizó herramientas modernas, la interpretación de los resultados y la construcción de la narrativa mantuvieron siempre un criterio científico riguroso y una sensibilidad hacia la diversidad de perspectivas presentes en la literatura.

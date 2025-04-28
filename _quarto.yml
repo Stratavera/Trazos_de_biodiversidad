@@ -1,0 +1,71 @@
+project:
+  type: book
+
+book:
+  cover-image: img/cover.png
+  title: "Trazos de Biodiversidad: Una Lectura Sistemática de la Investigación Biogeográfica del Ecuador"
+  author: "Gabriel Muñoz"
+  date: "25/04/2025"
+  chapters:
+    - href: index.qmd
+      text: "Acerca de este libro"
+    - href: preface.qmd 
+      text: "Prefacio"
+    - href: intro.qmd
+      text: "Introduccion"
+    - part: "Patrones de Biodiversidad y Descubrimiento de Especies"
+      chapters:
+        - href: capitulo_1_1.qmd
+          text: "Catalogación de la Biodiversidad en Ecuador: Una Visión General"
+        - href: capitulo_1_2.qmd
+          text: "Nuevas Descripciones de Especies: Ampliando el Árbol de la Vida"
+        - href: capitulo_1_3.qmd
+          text: "Avances en la Clasificación Taxonómica y Revisiones Sistemáticas"
+        - href: capitulo_1_4.qmd
+          text: "Patrones Ecológicos y Biogeográficos a lo Largo del Territorio"
+    
+    - part: "Dinámicas Ambientales y Cambio en la Biodiversidad"
+      chapters:
+        - href: capitulo_2_1.qmd
+          text: "Cambio Climático y Respuestas de la Biodiversidad"
+        - href: capitulo_2_2.qmd
+          text: "Uso del Suelo, Pérdida de Hábitat y Riesgos Ambientales"
+        - href: capitulo_2_3.qmd
+          text: "Geomorfología y su Influencia en la Distribución de la Biodiversidad"
+        - href: capitulo_2_4.qmd
+          text: "Gestión del Agua y Resiliencia de los Ecosistemas"
+    
+    - part: "Sistemas Socioecológicos y Saberes Tradicionales"
+      chapters:
+        - href: capitulo_3_1.qmd
+          text: "Agroecología y Prácticas de Uso Sostenible de la Tierra"
+        - href: capitulo_3_2.qmd
+          text: "Conocimiento Indígena y Conservación de la Biodiversidad"
+        - href: capitulo_3_3.qmd
+          text: "Factores Socioeconómicos y Dinámicas Comunitarias"
+        - href: capitulo_3_4.qmd
+          text: "Salud y Medio Ambiente: Vinculando Biodiversidad y Bienestar Humano"
+    
+    - part: "Salud, Patógenos y Vulnerabilidades Rurales"
+      chapters:
+        - href: capitulo_4_1.qmd
+          text: "Enfermedades Transmitidas por Vectores"
+        - href: capitulo_4_2.qmd
+          text: "Patógenos Hídricos y Salud en Comunidades Indígenas"
+        - href: capitulo_4_3.qmd
+          text: "Resistencia Antimicrobiana en Entornos Rurales"
+    
+    - part: "Clima, Infraestructura y Sostenibilidad Futura"
+      chapters:
+        - href: capitulo_5_1.qmd
+          text: "Variabilidad Climática y Tendencias de Temperatura"
+        - href: capitulo_5_2.qmd
+          text: "Desarrollo de Infraestructura y Transformaciones Ambientales"
+        - href: capitulo_5_3.qmd
+          text: "Energía y Sostenibilidad: Proyecciones para el Futuro de Ecuador"
+
+
+format:
+  html:
+    theme: haddock
+    toc: true

@@ -1,0 +1,14 @@
+---
+title: "Trazos de Biodiversidad: Una Lectura Sistemática de la Investigación Biogeográfica del Ecuador"
+format: html
+---
+
+El Ecuador es uno de los países con mayor diversidad biológica del mundo, concentrando una extraordinaria variedad de ecosistemas en un territorio relativamente pequeño. Desde los páramos andinos hasta las selvas tropicales del Chocó y la Amazonía, la riqueza de especies y la complejidad ecológica de sus paisajes constituyen una fuente inagotable de interés científico. Sin embargo, esta diversidad no ha sido distribuida ni estudiada de manera uniforme a lo largo del país, lo que plantea importantes retos para su comprensión y conservación.
+
+Trazos de Biodiversidad: Una Lectura Sistemática de la Investigación Biogeográfica del Ecuador surge como un esfuerzo de síntesis que busca integrar, organizar y presentar el conocimiento biogeográfico generado en las últimas décadas. Este libro no solo compila información existente, sino que aplica un enfoque sistemático para analizar grandes volúmenes de literatura científica, identificando patrones comunes, vacíos de conocimiento y tendencias emergentes en el estudio de la biodiversidad ecuatoriana.
+
+La estructura del libro refleja la diversidad misma del territorio que describe. A través de distintas secciones temáticas, se exploran los patrones de distribución de especies, los procesos ecológicos que los moldean, las dinámicas ambientales que alteran los ecosistemas, y las interacciones entre las dimensiones biológicas, sociales y culturales. Cada capítulo ofrece una aproximación integradora que combina información sobre plantas, animales, microorganismos y paisajes, conectando datos empíricos con interpretaciones ecológicas y biogeográficas de mayor escala.
+
+
+Este libro está dirigido a todas las personas interesadas en comprender la biodiversidad del Ecuador a partir de un acceso sistemático y estructurado al conocimiento científico disponible. Más allá de ofrecer una simple recopilación, su elaboración combina técnicas de síntesis automatizada para movilizar y transferir saberes científicos desde fuentes publicadas hacia un formato accesible y de lectura fluida. Al traducir hallazgos complejos en un lenguaje claro, esta obra contribuye a fortalecer la base de conocimiento necesaria para afrontar los desafíos de conservación en un país que, a pesar de su riqueza natural, enfrenta presiones crecientes por el cambio climático, el cambio de uso del suelo y otras amenazas antropogénicas.
+
