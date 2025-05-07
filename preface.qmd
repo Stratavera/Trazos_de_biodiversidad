@@ -2,7 +2,12 @@
 format: html
 ---
 
-Trazos de Biodiversidad invita a ver el paisaje ecuatoriano no solo como un conjunto de datos dispersos, sino como un entramado dinámico de historias evolutivas, adaptaciones ecológicas e interacciones humanas. A través de una lectura sistemática y reflexiva de la investigación biogeográfica, el libro propone una mirada más profunda y matizada sobre lo que significa conservar y comprender la biodiversidad en uno de los rincones más complejos y fascinantes del planeta.
+# Prefacio
+
+Este libro está dirigido a todas las personas interesadas en comprender la biodiversidad del Ecuador a partir de un acceso sistemático y estructurado al conocimiento científico disponible. Más allá de ofrecer una simple recopilación, su elaboración combina técnicas de síntesis automatizada para movilizar y transferir saberes científicos desde fuentes publicadas hacia un formato accesible y de lectura fluida. Al traducir hallazgos complejos en un lenguaje claro, esta obra contribuye a fortalecer la base de conocimiento necesaria para afrontar los desafíos de conservación en un país que, a pesar de su riqueza natural, enfrenta presiones crecientes por el cambio climático, el cambio de uso del suelo y otras amenazas antropogénicas.
 
 
-Una característica distintiva de este proyecto es la utilización de técnicas de análisis sistematizado para organizar los contenidos. A partir de métodos de clasificación automatizada y lectura estructurada de fuentes, se logró sintetizar un cuerpo de conocimiento amplio y disperso, respetando la integridad de los datos originales y ofreciendo una narrativa accesible para investigadores, estudiantes y profesionales de la conservación. Aunque el proceso de sistematización utilizó herramientas modernas, la interpretación de los resultados y la construcción de la narrativa mantuvieron siempre un criterio científico riguroso y una sensibilidad hacia la diversidad de perspectivas presentes en la literatura.
+
+::: {.column-screen-inset-right}
+![](img/preface_cover.webp)
+:::

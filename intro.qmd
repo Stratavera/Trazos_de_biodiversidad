@@ -3,3 +3,106 @@ title: "Introduccion"
 format: html
 ---
 
+
+Trazos de Biodiversidad invita a ver el paisaje ecuatoriano no solo como un conjunto de datos dispersos, sino como un entramado dinámico de historias evolutivas, adaptaciones ecológicas e interacciones humanas. A través de una lectura sistemática y reflexiva de la investigación biogeográfica, el libro propone una mirada más profunda y matizada sobre lo que significa conservar y comprender la biodiversidad en uno de los rincones más complejos y fascinantes del planeta. 
+
+Una característica distintiva de este proyecto es la utilización de técnicas de análisis sistematizado para organizar los contenidos. A partir de métodos de clasificación automatizada y lectura estructurada de fuentes, se logró sintetizar un cuerpo de conocimiento amplio y disperso, respetando la integridad de los datos originales y ofreciendo una narrativa accesible para investigadores, estudiantes y profesionales de la conservación. Aunque el proceso de sistematización utilizó herramientas modernas, la interpretación de los resultados y la construcción de la narrativa mantuvieron siempre un criterio científico riguroso y una sensibilidad hacia la diversidad de perspectivas presentes en la literatura.
+
+La estructura del libro refleja la diversidad misma del territorio que describe. A través de distintas secciones temáticas, se exploran los patrones de distribución de especies, los procesos ecológicos que los moldean, las dinámicas ambientales que alteran los ecosistemas, y las interacciones entre las dimensiones biológicas, sociales y culturales. Cada capítulo ofrece una aproximación integradora que combina información sobre plantas, animales, microorganismos y paisajes, conectando datos empíricos con interpretaciones ecológicas y biogeográficas de mayor escala.
+
+
+## Flujo de trabajo
+
+
+Este flujo de trabajo combina técnicas de minería de texto, modelado de tópicos y generación automatizada de texto para construir un libro académico sobre biogeografía en Ecuador. Se divide en dos grandes etapas: (1) extracción de tópicos latentes y agrupación temática, y (2) redacción asistida por inteligencia artificial basada en agrupamientos semánticos.
+
+### Identificación de temas latentes en títulos científicos
+
+#### Preparación del corpus
+Se parte de un conjunto de publicaciones indexadas (pubs_df), del cual se extraen los campos doi y title. Los títulos se transforman a minúsculas y se filtran para eliminar registros incompletos.
+
+#### Eliminación de palabras vacías
+Se unifican las listas de stopwords en inglés (tidytext::stop_words) y en español (stopwords::stopwords("es")). Estas palabras se excluyen del análisis para conservar términos informativos.
+
+####  Tokenización y construcción del corpus
+Los títulos se segmentan en palabras individuales y se construye una matriz documento-término (DTM) que cuantifica la frecuencia de aparición de cada palabra por título.
+
+#### Modelado de tópicos (LDA)
+Se ajusta un modelo Latent Dirichlet Allocation con 10 tópicos, permitiendo descubrir patrones de coocurrencia entre términos y agrupar títulos según afinidad temática. Se extraen los 70 términos más representativos por tópico (matriz β), y se asigna a cada título el tópico con mayor pertenencia (matriz γ).
+
+::: callout-note
+#### Nota metodológica: 
+
+Se usaron únicamente los títulos en esta etapa por su carácter sintético y su valor representativo del enfoque principal de cada publicación. Esta elección también responde a consideraciones de eficiencia computacional y claridad interpretativa.
+:::
+
+
+### Agrupamiento temático y redacción automatizada de capítulos
+
+####  Agrupamiento semántico de términos
+Se utiliza un agente de lenguaje (term_clusterer) basado en ellmer y el modelo gpt-4o-mini para agrupar los términos más representativos en temas generales, produciendo un conjunto de títulos de sección y términos asociados en formato JSON.
+
+####  Filtrado temático por biogeografía ecuatoriana
+Se seleccionan los artículos cuyas palabras clave coinciden con términos agrupados bajo la temática Biogeography and Ecology y cuyos resúmenes mencionan explícitamente “Ecuador”. Este subconjunto define el corpus de trabajo principal para la redacción del libro (n ≈ 1348 artículos).
+
+#### División del corpus y agrupamiento estructurado
+Los títulos se dividen en 4 subconjuntos y se someten a un nuevo proceso de agrupamiento temático para identificar subtemas emergentes. Cada sección se analiza con un agente que estructura los resultados en formato JSON, posteriormente depurado con funciones personalizadas como safe_parse_json.
+
+####  Generación del diccionario temático
+Un agente adicional (term_dictionary) genera una tabla que relaciona cada conjunto de términos con los temas definidos, lo que permite construir un esquema jerárquico de capítulos y secciones para el libro.
+
+####  Construcción del esqueleto del libro
+A partir del diccionario temático y las agrupaciones obtenidas, se genera un objeto chapter_themes que contiene los títulos y las fuentes asociadas a cada sección del libro. Este esqueleto guía la redacción automatizada.
+
+### Redacción asistida por IA
+####  Agente redactor (scribe_agent)
+Se configura un agente con un sistema de instrucciones detallado para producir textos académicos en español. Cada sección del libro se redacta con base en los títulos, autores, fechas y resúmenes disponibles en el corpus, integrados como “semilla” (seed_section).
+
+####  Ejecución del ciclo de redacción
+Mediante un bucle externo por capítulos y uno interno por secciones, el agente redacta narrativas cohesionadas siguiendo lineamientos de estilo científico, estructuración lógica y claridad divulgativa. Cada salida es almacenada en un objeto estructurado llamado book.
+
+#### Almacenamiento del manuscrito generado
+El contenido del libro es almacenado como objeto R (book_raw.rds), permitiendo su edición, curaduría y exportación posterior a formatos como Quarto, HTML o PDF.
+
+
+
+
+::: callout
+#### Flujo de trabajo
+
+```{mermaid}
+
+flowchart TD
+    A["Inicializar parámetros: query_terms, start_year, batch_size"] --> A1["Ejecutar bucle con cr_works() y cursor"]
+    A1 --> A2["Guardar resultados en lista: all_pubs[[i]]"]
+    A2 --> A3["Combinar en un solo data frame con bind_rows()"]
+    A3 --> A4["Eliminar duplicados por DOI con distinct()"]
+
+    A4 --> B["Filtrar títulos válidos y convertir a minúsculas"]
+    B --> C["Eliminar stopwords en inglés y español"]
+    C --> D["Tokenizar títulos con unnest_tokens()"]
+    D --> E["Crear DTM con cast_dtm()"]
+
+    E --> F["Ajustar modelo LDA con topicmodels::LDA(k = 10)"]
+    F --> F1["Extraer términos por tópico (beta)"]
+    F --> G["Asignar tópico dominante por documento (gamma)"]
+
+    F1 --> H["Clusterizar términos en temas con term_clusterer()"]
+    G --> I["Filtrar títulos relacionados con biogeografía y Ecuador"]
+    H --> J["Definir secciones del libro por agrupación temática"]
+
+    I --> K["Dividir corpus en subconjuntos con chunk_vector()"]
+    K --> K1["Aplicar term_clusterer() a cada subconjunto"]
+
+    J --> L["Generar diccionario temático con term_dictionary()"]
+    K1 --> M["Unir términos por sección con safe_parse_json()"]
+    L --> M
+
+    M --> N["Redactar secciones con scribe_agent()"]
+    N --> N1["Seed: título + autor + año + resumen"]
+    N1 --> N2["Concatenar semilla por sección con /newarticle"]
+    N2 --> O["Guardar resultado como book_raw.rds"]
+```
+
+
+:::

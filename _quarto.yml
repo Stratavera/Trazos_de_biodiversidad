@@ -3,7 +3,22 @@ project:
 
 book:
   cover-image: img/cover.png
-  title: "Trazos de Biodiversidad: Una Lectura Sistemática de la Investigación Biogeográfica del Ecuador"
+  title: "Trazos de Biodiversidad"
+  subtitle: "Una Lectura Sistemática de la Investigación Biogeográfica del Ecuador"
+  reader-mode: true
+  favicon: img/cover.png
+  page-navigation: true
+  back-to-top-navigation: true
+  downloads: [pdf, epub]
+  sharing: [twitter, facebook]
+  repo-url: "https://github.com/Stratavera/Trazos_de_biodiversidad"
+  image: img/cover.png
+  sidebar:
+    logo: img/cover.png
+    style: docked
+    background: "#D5F0C0"
+  
+  
   author: "Gabriel Muñoz"
   date: "25/04/2025"
   chapters:
@@ -69,3 +84,5 @@ format:
   html:
     theme: haddock
     toc: true
+    mermaid:
+      theme: forest
